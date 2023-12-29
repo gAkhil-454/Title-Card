@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Poiret+One&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: rgb(217, 231, 212);
+            cursor:default;
+        }
+        .card{
+            width: 750px;
+            height: 400px;
+            background: rgb(194, 193, 193);
+            box-shadow: 5px 5px 15px 0px rgb(175, 170, 170);
+            border-radius: 10px;
+            position: absolute;
+            top: 30%;
+            display: flex;
+            flex-direction: row;
+            
+        }
+        .container{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            
+        }
+        .details{
+            font-family: 'Lato', sans-serif;
+        }
+        .images{
+            height: 95%;
+            
+            
+        }
+        .slides{
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: rgb(61, 59, 59);
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(202, 199, 199, 0.8);
+        }
+        .dot {
+            cursor: pointer;
+            height: 10px;
+            width: 10px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+            }
+        .left{
+            width: 60%; 
+            height: 100%; 
+            background-color: rgb(250, 249, 249);
+            border-radius: 10px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .active, .dot:hover {
+             background-color: #717171;
+        }
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .3}
+            to {opacity: 1}
+        }
+        .bu{
+            display: flex;
+            width: 100%;
+        }
+        .b1{
+            border: none;
+            margin-left: 10px;
+            width: 70%;
+            margin-right: 5px;
+            height: 50px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+        .b2{
+            border: none;
+            width: 30%;
+            margin-right: 10px;
+            border-radius: 5px;
+            transition: 0.2s;
+        }
+        .sizes{
+            height: 40px;
+            display: flex;
+            margin: 10px 5px;
+        }
+        .size{
+            width: 50px;
+            background-color: rgb(164, 168, 164);
+            border: solid 0px ;
+            margin-right: 1px;
+            transition: 0.05s;
+            border-radius: 8px;
+            
+        }
+        .size:hover{
+            background-color: #e2dddd;
+        }
+        .b1:hover, .b2:hover{
+            background-color: rgb(174, 230, 177)
+        
+        }
+        .selected{
+            background-color: #e2dddd;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="left">
+
+            
+                <div class="images" >
+                    <div class="slides fade">
+                        <img src="1.png" alt="1">
+                    </div>
+                    <div class="slides">
+                        <img src="2.png" alt="1">
+    
+                    </div>
+                    <div class="slides">
+                        <img src="3.png" alt="1">
+    
+                    </div>
+                    <div class="slides">
+                        <img src="4.png" alt="1">
+    
+                    </div>
+                    <div class="slides">
+                        <img src="5.png" alt="1">
+    
+                    </div>
+                    <div class="slides">
+                        <img src="6.png" alt="1">
+    
+                    </div>
+                    
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <div style="text-align:center;">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                    <span class="dot" onclick="currentSlide(6)"></span>
+                </div>
+                
+            
+            </div>
+            <div class="details" style="width: 40%;">
+                <h3 style="margin-left: 10px; margin-right: 5px;">MB.03 Hills Unisex Basketball Shoes</h3>
+                <p style="margin-left: 10px;"><b>₹13,999</b></p>
+                <p style="margin-left: 10px;">Prices include GST</p>
+                <p style="margin-left: 10px;"><b>Color</b></p>
+                <p style="margin-left: 10px;">Feather Gray-Lime Smash</p>
+                <p style="margin-left: 10px;"><b>Choose Size</b></p>
+                <div class="sizes">
+                    <button class="size"  onclick="currbut(1)">7</button>
+                    <button class="size"  onclick="currbut(2)">8</button>
+                    <button class="size"  onclick="currbut(3)">9</button>
+                    <button class="size"  onclick="currbut(4)">10</utton>
+                    <button class="size"  onclick="currbut(5)">11</button>
+                    <button class="size"  onclick="currbut(6)">12</button>
+                </div>
+                <br>
+                <div class="bu">
+                    <button class="b1" onclick="increase(1)">ADD TO CART</button>
+                    <button class="b2" onclick="show()">WHISLIST</button>
+                </div>
+               
+                
+            </div>
+
+        </div>
+
+    </div>
+    
+    <script>
+        let cartvalue = 0;
+        let slideIndex = 1;
+        let choosen = 0;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+        
+        function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        }
+        function currbut(n){
+            let nos = document.getElementsByClassName("size");
+
+            for(let i = 0 ; i < nos.length; i++){
+                if(nos[i].classList)
+                nos[i].classList.remove("selected");
+            }
+            nos[n-1].classList.add("selected");
+            choosen = nos[n-1].innerHTML;
+        }
+        function increase(n){
+            
+            cartvalue++;
+            alert("Size "+ choosen+  " Added to cart, total cart value is " + cartvalue);
+        }
+        function show(){
+            alert("Added to whishlist");
+        }
+        
+    </script>
+</body>
+</html>
